@@ -1,5 +1,5 @@
 var app = angular.module('seminaire', ['ui.bootstrap','ngAnimate']);
-
+prefix = '/rcf-artec-2020'
 
 
 app.controller('ctrl', function($scope, $window, $animate) {
@@ -20,7 +20,7 @@ app.directive('imageGrid', function() {
      prefix: '@',
      video: '='
    },
-   templateUrl: '../templates/img_grid.html',
+   templateUrl: prefix + '/templates/img_grid.html',
    translude: true,
    link: function(scope, element) {
 
@@ -30,17 +30,17 @@ app.directive('imageGrid', function() {
      let docuList = []
      let daList = []
      for(let i=0;i< parseInt(scope.pieces);i++) {
-       docuList.push('/templates/' + scope.prefix + '/documentation/' + String(i+1) + '.html')
-       daList.push('/templates/' + scope.prefix + '/data/' + String(i+1) + '.html')
+       docuList.push(prefix + '/templates/' + scope.prefix + '/documentation/' + String(i+1) + '.html')
+       daList.push(prefix + '/templates/' + scope.prefix + '/data/' + String(i+1) + '.html')
        for(let j=0; j< scope.portraits.length;j++) {
-         imageLists[j].push('/style/images/portraits/' + scope.portraits[j] + '/' + String(i+1) + '.png');
+         imageLists[j].push(prefix + '/style/images/portraits/' + scope.portraits[j] + '/' + String(i+1) + '.png');
        }
      }
      scope.infoLists = imageLists;
      scope.documentList = docuList;
      scope.dataList = daList
      scope.showAudio = false
-     scope.replique = '/sound/' + scope.son
+     scope.replique = prefix + '/sound/' + scope.son
      scope.inc_index = function() {
        if(scope.index < scope.infoLists[0].length-1 && !scope.completed) {
         scope.index += 1
@@ -60,15 +60,3 @@ app.directive('imageGrid', function() {
    }
  }
 });
-
-app.directive('fadeIn', function($timeout){
-    return {
-        restrict: 'A',
-        link: function($scope, $element, attrs){
-            $element.addClass("ng-hide-remove");
-            $element.on('load', function() {
-                $element.addClass("ng-hide-add");
-            });
-        }
-    };
-})
