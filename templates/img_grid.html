@@ -1,0 +1,19 @@
+<div ng-controller="ctrl" class="grid-container col-md-12">
+  <div class="col-md-3 documentation">
+    <div ng-include='documentList[index]'></div>
+  </div>
+  <div>
+    <div class="puzzle col-md-3" ng-repeat="list in infoLists">
+      <div class="portrait-container" ng-click="inc_index()" >
+        <img class="puzzle-piece" ng-src ="{{infoLists[$index][index]}}" class="fade-animation"/>
+      </div>
+    </div>
+    <div class="replique" ng-show="showAudio">
+      <audio src="{{replique}}">Your browser does not support the audio element.</audio>
+      <div class="audio-icon"></div>
+    </div>
+  </div>
+  <div class="col-md-3 data" >
+    <div ng-include="dataList[index]"></div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+html,body {
+  font-family: Nunito;
+  height:100% !important;
+  width:100%;
+}
+
+img {
+  width: 100%
+}
+
+.grid-container {
+  height: 100%;
+}
+
+.puzzle, .documentation, .data {
+  display: inline-block !important;
+}
+
+.portrait-container {
+  padding-top: 10%;
+}
+
+.extrait {
+  font-style: italic;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 3%;
+  padding-right: 3%;
+  background-color: rgba(120,120,120, 0.1);
+  border-radius: 5%;
+}
+
+
+.main-content {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.audio-icon {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  background: red;
+	border-radius: 50%;
+	box-shadow: 0 0 0 0 rgba(255,0,0, 1);
+	height: 40px;
+	width: 40px;
+  margin:auto;
+	transform: scale(1);
+	animation: pulse 2s infinite;
+  padding-top: 25px;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 0,0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(255, 0,0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(255, 0,0, 0);
+	}
+}
+
+.main-content img {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+.fade-animation.ng-enter,
+.fade-animation.ng-leave {
+  -webkit-transition: 0.25s linear all;
+  -moz-transition: 0.25s linear all;
+  -o-transition: 0.25s linear all;
+  transition: 0.25s linear all;
+}
+.fade-animation.ng-enter {
+  z-index: 100;
+  opacity: 0;
+}
+.fade-animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.fade-animation.ng-leave {
+  z-index: 101;
+  opacity: 1;
+}
+.fade-animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
